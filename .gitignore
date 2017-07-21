@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+.DS_Store
+.gitignore
+.idea/vcs.xml
+.idea/workspace.xml
+tensorflow_pra/.DS_Store
