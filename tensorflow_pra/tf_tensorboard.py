@@ -6,9 +6,16 @@ tensorboard 可视化生成tensorboard文件
 import tensorflow as tf
 
 
-def add_layer(inputs, in_size, out_size, activation_function=None):
+def add_layer(inputs, in_size, out_size,n_layer, activation_function=None):
     # add one more layer and return the output of this layer
-    Weights = tf.Variable(tf.random_normal([in_size, out_size]))
+    #添加一层名称定义
+    layer_name = 'layer%s'%n_layer
+    with tf.name_scope(layer_name):
+        with tf.name_scope('weights'):
+            Weights = tf.Variable(tf.random_normal([in_size, out_size]))
+            #将weights添加到histogram标签下
+            tf.hi
+    
     biases = tf.Variable(tf.zeros([1, out_size]) + 0.1)
     Wx_plus_b = tf.add(tf.matmul(inputs, Weights), biases)
     if activation_function is None:
