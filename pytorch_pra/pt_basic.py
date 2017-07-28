@@ -40,3 +40,12 @@ print(
 )
 
 #矩阵运算
+#矩阵点乘
+data = [[1,2], [3,4]]
+tensor = torch.FloatTensor(data)  # 转换成32位浮点 tensor
+print(
+    '\nmatrix multiplication (matmul)',
+    '\nnumpy: ', np.matmul(data, data),     # [[7, 10], [15, 22]]
+    '\ntorch: ', torch.mm(tensor, tensor)   # [[7, 10], [15, 22]]
+)
+
